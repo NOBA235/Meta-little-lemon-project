@@ -88,15 +88,26 @@ body {
   position: relative;
 }
 
-.nav-links a:hover:before{
+.nav-links a:before {
   content: "";
   position: absolute;
   left: 0;
+  bottom: 2px;
   width: 100%;
   height: 2px;
-  background-color:orange;
-  bottom: 2px;
+  background-color: #155724;
 
+  /* Start hidden with scaleX(0) */
+  transform: scaleX(0);
+  transform-origin: left center;
+
+  /* Smooth transition */
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover:before {
+  /* Expand underline smoothly */
+  transform: scaleX(1);
 }
 .nav-links a:hover {
   color: #495e57;
